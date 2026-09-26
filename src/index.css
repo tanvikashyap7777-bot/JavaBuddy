@@ -1,0 +1,101 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --sat: env(safe-area-inset-top, 0px);
+    --sab: env(safe-area-inset-bottom, 0px);
+    --sal: env(safe-area-inset-left, 0px);
+    --sar: env(safe-area-inset-right, 0px);
+  }
+
+  html {
+    -webkit-text-size-adjust: 100%;
+    -webkit-tap-highlight-color: transparent;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: #FAFAFB;
+    color: #1A1A1A;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+    min-height: 100vh;
+    min-height: -webkit-fill-available;
+    overscroll-behavior-y: none;
+    -webkit-font-smoothing: antialiased;
+  }
+}
+
+/* Safe area padding utilities */
+.safe-top {
+  padding-top: max(0.5rem, env(safe-area-inset-top));
+}
+
+.safe-bottom {
+  padding-bottom: max(0.75rem, env(safe-area-inset-bottom));
+}
+
+.safe-area-container {
+  padding-left: env(safe-area-inset-left, 0px);
+  padding-right: env(safe-area-inset-right, 0px);
+}
+
+/* Neo-brutalist custom utilities */
+.brutal-shadow {
+  box-shadow: 4px 4px 0px 0px rgba(0, 0, 0, 1);
+}
+
+.brutal-shadow-sm {
+  box-shadow: 2px 2px 0px 0px rgba(0, 0, 0, 1);
+}
+
+.brutal-shadow-lg {
+  box-shadow: 6px 6px 0px 0px rgba(0, 0, 0, 1);
+}
+
+.brutal-shadow-red {
+  box-shadow: 4px 4px 0px 0px #8B0000;
+}
+
+.brutal-shadow-darkred {
+  box-shadow: 6px 6px 0px 0px #5C0000;
+}
+
+.brutal-btn {
+  transition: transform 0.1s ease, box-shadow 0.1s ease;
+  touch-action: manipulation;
+  user-select: none;
+}
+
+.brutal-btn:active {
+  transform: translate(2px, 2px);
+  box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 1) !important;
+}
+
+/* Touch-friendly horizontal scrollbars */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Clean code scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.4);
+}
+
